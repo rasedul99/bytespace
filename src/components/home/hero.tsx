@@ -5,15 +5,13 @@ import { GridLines } from "@/components/grid-lines";
 import { HappyStudentsCard } from "@/components/happy-students-card";
 import { Navbar } from "@/components/navbar";
 import { ProgressCard } from "@/components/progress-card";
+import coneWhite from "../../../public/images/hero/cone-white.webp";
+import cylinderLime from "../../../public/images/hero/cylinder-lime.webp";
+import ringWhite from "../../../public/images/hero/ring-white.webp";
 
 const art = {
   student: "/images/hero/student.svg",
   arc: "/images/hero/student-arc.svg",
-  spring: "/images/hero/spring.svg",
-  squiggle: "/images/hero/squiggle.svg",
-  ring: "/images/hero/ring.svg",
-  cone: "/images/hero/cone.svg",
-  cylinder: "/images/hero/cylinder.svg",
 };
 
 export function Hero() {
@@ -21,54 +19,42 @@ export function Hero() {
     <section className="relative overflow-hidden bg-blue-800 text-white h-dvh">
       <GridLines />
 
-      {/* floating shapes */}
-      {/* <div
+      {/* 3D shapes from the design, behind the content; hidden below lg */}
+      <div
         aria-hidden
         className="pointer-events-none absolute inset-0 hidden lg:block"
       >
+        {/* lime spring, left edge */}
         <Image
-          src={art.spring}
+          src="/images/hero/spring-lime.webp"
           alt=""
-          width={140}
-          height={230}
-          className="absolute -left-4 top-72 w-32 -rotate-12"
+          width={387}
+          height={387}
+          className="absolute -left-25 top-[23%] w-100"
         />
+        {/* white squiggle — same spring, turned white */}
         <Image
-          src={art.squiggle}
+          src="/images/hero/spring-lime.webp"
           alt=""
-          width={110}
-          height={90}
-          className="absolute left-[18%] top-[34rem] w-24"
+          width={387}
+          height={387}
+          className="absolute left-[13%] top-[46%] w-50 -rotate-45 brightness-0 invert"
         />
+        {/* white ring, bottom-left */}
+        <Image src={ringWhite} alt="" className="absolute left-14 top-[71%] w-55" />
+        {/* lime cylinder against the right edge */}
+        <Image src={cylinderLime} alt="" className="absolute right-0 top-[25%] w-44" />
+        {/* white cone, right */}
+        <Image src={coneWhite} alt="" className="absolute left-[78%] top-[48%] w-32" />
+        {/* white squiggle, bottom-right */}
         <Image
-          src={art.ring}
+          src="/images/hero/spring-lime.webp"
           alt=""
-          width={200}
-          height={200}
-          className="absolute left-[8%] bottom-10 w-44"
+          width={387}
+          height={387}
+          className="absolute left-[82%] top-[64%] w-75 rotate-12 brightness-0 invert"
         />
-        <Image
-          src={art.cylinder}
-          alt=""
-          width={180}
-          height={240}
-          className="absolute -right-6 top-72 w-40"
-        />
-        <Image
-          src={art.cone}
-          alt=""
-          width={130}
-          height={130}
-          className="absolute right-[12%] top-[34rem] w-28"
-        />
-        <Image
-          src={art.squiggle}
-          alt=""
-          width={150}
-          height={120}
-          className="absolute right-[4%] bottom-16 w-36 rotate-90"
-        />
-      </div> */}
+      </div>
 
       <Navbar />
 

@@ -103,7 +103,7 @@ export function GrowAndCreate() {
               className="absolute left-[-5%] bottom-0 w-[132%] max-w-none [clip-path:inset(3%_0_0_0)]"
             />
             <Image
-              src="/images/hero/spring-lime.svg"
+              src="/images/hero/spring-lime.webp"
               alt=""
               width={387}
               height={387}
@@ -151,7 +151,7 @@ export function GrowAndCreate() {
               className="absolute bottom-0 left-[19%] z-10 h-full w-auto"
             />
             <Image
-              src="/images/hero/spring-lime.svg"
+              src="/images/hero/spring-lime.webp"
               alt=""
               width={387}
               height={387}

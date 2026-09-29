@@ -17,7 +17,7 @@ export function CreatorCta() {
         className="pointer-events-none absolute inset-0 hidden md:block"
       >
         <Image
-          src="/images/hero/spring-lime.svg"
+          src="/images/hero/spring-lime.webp"
           alt=""
           width={387}
           height={387}
@@ -25,7 +25,7 @@ export function CreatorCta() {
         />
 
         <Image
-          src="/images/hero/spring-lime.svg"
+          src="/images/hero/spring-lime.webp"
           alt=""
           width={387}
           height={387}
@@ -57,7 +57,7 @@ export function CreatorCta() {
         />
 
         <Image
-          src="/images/hero/spring-lime.svg"
+          src="/images/hero/spring-lime.webp"
           alt=""
           width={387}
           height={387}

@@ -5,6 +5,8 @@ import { CourseCard } from "@/components/course-card";
 import { GridLines } from "@/components/grid-lines";
 import { HappyStudentsCard } from "@/components/happy-students-card";
 import { courses } from "@/lib/courses";
+import coneLime from "../../../public/images/creator-cta/cone-lime.webp";
+import ringLime from "../../../public/images/creator-cta/ring-lime.webp";
 import { AuthIntro } from "./auth-intro";
 
 export default function AuthLayout({ children }: LayoutProps<"/">) {
@@ -41,6 +43,25 @@ export default function AuthLayout({ children }: LayoutProps<"/">) {
             <HappyStudentsCard
               tone="lime"
               className="absolute left-56 top-110"
+            />
+
+            {/* shapes, in front of the cards */}
+            <Image
+              src={ringLime}
+              alt=""
+              className="absolute left-12 top-11 w-33"
+            />
+            <Image
+              src="/images/hero/spring-lime.webp"
+              alt=""
+              width={387}
+              height={387}
+              className="absolute left-84 top-72 w-56 -rotate-30 brightness-0 invert"
+            />
+            <Image
+              src={coneLime}
+              alt=""
+              className="absolute -left-2 top-103 w-38"
             />
           </div>
         </div>
