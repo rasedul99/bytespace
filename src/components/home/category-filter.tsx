@@ -3,42 +3,34 @@
 import Link from "next/link";
 import { useState } from "react";
 
+import { chipClass } from "@/components/category-chip";
+import { categories } from "@/lib/categories";
 import { cn } from "@/lib/utils";
 
-const categories = [
-  "Featured",
-  "Music",
-  "Drawing & Painting",
-  "Marketing",
-  "Animation",
-  "Social Media",
-  "UI/UX Design",
-  "Creative Marketing",
-  "Digital Illustration",
-  "Film & Video",
-  "Crafts",
-  "Freelance & Entrepreneurship",
-  "Graphic Design",
-  "Photography",
-  "Productivity",
-  "Web Development",
-  "Data Science",
-  "Cooking",
-];
 
 export function CategoryFilter({
   limit,
   showMore = true,
   className,
+  active: activeProp,
+  onSelect,
 }: {
   limit?: number;
   showMore?: boolean;
   className?: string;
+  /** Pass `active` + `onSelect` to control the selection from a parent. */
+  active?: string;
+  onSelect?: (category: string) => void;
 }) {
   const shown = limit
     ? [...categories.slice(0, limit - 1), categories[categories.length - 1]]
     : categories;
-  const [active, setActive] = useState(shown[0]);
+  const [ownActive, setOwnActive] = useState(shown[0]);
+  const active = activeProp ?? ownActive;
+  const select = (category: string) => {
+    setOwnActive(category);
+    onSelect?.(category);
+  };
 
   return (
     <div
@@ -52,13 +44,8 @@ export function CategoryFilter({
           key={category}
           type="button"
           aria-pressed={active === category}
-          onClick={() => setActive(category)}
-          className={cn(
-            "h-10.5 rounded-full px-4 body-m text-gray-700 transition-colors",
-            active === category
-              ? "bg-lime-400"
-              : "bg-gray-50 hover:bg-gray-100",
-          )}
+          onClick={() => select(category)}
+          className={chipClass(active === category)}
         >
           {category}
         </button>

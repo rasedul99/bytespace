@@ -15,6 +15,8 @@ const students = [avatarOne, avatarTwo, avatarThree, avatarFour];
 export const courses: Course[] = [
   {
     slug: "learn-figma-from-basic",
+    categories: ["UI/UX Design", "Graphic Design", "Web Development"],
+    featured: true,
     image: learnFigmaFromBasic,
     title: "Learn Figma from Basic",
     creator: "purepearl studio",
@@ -29,6 +31,8 @@ export const courses: Course[] = [
   },
   {
     slug: "build-digital-asset",
+    categories: ["Digital Illustration", "Graphic Design", "Creative Marketing"],
+    featured: true,
     image: buildDigitalAsset,
     title: "Build Digital Asset",
     creator: "purepearl studio",
@@ -43,6 +47,8 @@ export const courses: Course[] = [
   },
   {
     slug: "the-power-of-big-data",
+    categories: ["Data Science", "Productivity"],
+    featured: true,
     image: thePowerOfBigData,
     title: "the Power of Big Data",
     creator: "purepearl studio",
@@ -57,6 +63,8 @@ export const courses: Course[] = [
   },
   {
     slug: "balancing-productivity-and-wellbeing",
+    categories: ["Productivity"],
+    featured: true,
     image: balancingProductivityAndWellbeing,
     title: "Balancing Productivity and Wellbeing",
     creator: "purepearl studio",
@@ -71,6 +79,8 @@ export const courses: Course[] = [
   },
   {
     slug: "mastering-money-management",
+    categories: ["Freelance & Entrepreneurship", "Productivity"],
+    featured: true,
     image: masteringMoneyManagement,
     title: "Mastering Money Management",
     creator: "purepearl studio",
@@ -85,6 +95,8 @@ export const courses: Course[] = [
   },
   {
     slug: "from-idea-to-startup-success",
+    categories: ["Freelance & Entrepreneurship", "Marketing"],
+    featured: true,
     image: fromIdeaToStartupSuccess,
     title: "From Idea to Startup Success",
     creator: "purepearl studio",

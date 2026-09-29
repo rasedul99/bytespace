@@ -9,14 +9,19 @@ import { cn } from "@/lib/utils";
 
 function Stars({ value, className }: { value: number; className?: string }) {
   return (
-    <span className={cn("flex gap-1", className)} aria-label={`${value} out of 5 stars`}>
+    <span
+      className={cn("flex gap-1", className)}
+      aria-label={`${value} out of 5 stars`}
+    >
       {[1, 2, 3, 4, 5].map((n) => (
         <Star
           key={n}
           aria-hidden
           className={cn(
             "size-4",
-            n <= value ? "fill-gray-950 text-gray-950" : "fill-gray-200 text-gray-200",
+            n <= value
+              ? "fill-gray-700 text-gray-700"
+              : "fill-gray-200 text-gray-200",
           )}
         />
       ))}
@@ -36,7 +41,8 @@ export function Reviews({
   const [filter, setFilter] = useState<number | null>(null);
 
   const total = breakdown.reduce((a, b) => a + b, 0);
-  const average = breakdown.reduce((sum, count, i) => sum + count * (5 - i), 0) / total;
+  const average =
+    breakdown.reduce((sum, count, i) => sum + count * (5 - i), 0) / total;
   const max = Math.max(...breakdown);
   const shown = filter ? reviews.filter((r) => r.rating === filter) : reviews;
 
@@ -50,9 +56,10 @@ export function Reviews({
     <div>
       <h2 className="heading-xs text-gray-950">What Learners Are Saying</h2>
       <p className="mt-6 body-m text-gray-700">
-        Discover what our learners have to say about their experience with ‘{courseTitle}.’
-        Read reviews and ratings from individuals who have embarked on the transformative
-        journey of mastering digital asset creation.
+        Discover what our learners have to say about their experience with ‘
+        {courseTitle}.’ Read reviews and ratings from individuals who have
+        embarked on the transformative journey of mastering digital asset
+        creation.
       </p>
 
       {/* rating summary */}
@@ -73,7 +80,9 @@ export function Reviews({
                   />
                 </span>
                 <Stars value={stars} />
-                <span className="w-9 text-right body-s text-gray-700">{count}</span>
+                <span className="w-9 text-right body-s text-gray-700">
+                  {count}
+                </span>
               </li>
             );
           })}
@@ -99,7 +108,7 @@ export function Reviews({
             onClick={() => setFilter(n)}
             className={chip(filter === n)}
           >
-            <Star className="size-4 fill-gray-950 text-gray-950" aria-hidden />
+            <Star className="size-4 fill-gray-700 text-gray-700" aria-hidden />
             {n}
           </button>
         ))}
@@ -108,14 +117,23 @@ export function Reviews({
       {shown.length > 0 ? (
         <ul className="mt-6 space-y-6">
           {shown.map((review) => (
-            <li key={review.name} className="rounded-3xl border border-gray-200 p-6">
+            <li
+              key={review.name}
+              className="rounded-3xl border border-gray-200 p-6"
+            >
               <div className="flex items-start gap-3">
-                <Image src={review.avatar} alt="" className="size-10 rounded-full" />
+                <Image
+                  src={review.avatar}
+                  alt=""
+                  className="size-10 rounded-full"
+                />
                 <div className="flex-1">
                   <p className="label-m text-gray-950">{review.name}</p>
                   <p className="body-xs text-gray-700">{review.role}</p>
                 </div>
-                <span className="body-xs italic text-gray-700">{review.date}</span>
+                <span className="body-xs italic text-gray-700">
+                  {review.date}
+                </span>
               </div>
               <Stars value={review.rating} className="mt-5 [&_svg]:size-5" />
               <p className="mt-5 body-m text-gray-700">{review.text}</p>
@@ -123,7 +141,9 @@ export function Reviews({
           ))}
         </ul>
       ) : (
-        <p className="mt-6 body-m text-gray-700">No {filter}-star reviews yet.</p>
+        <p className="mt-6 body-m text-gray-700">
+          No {filter}-star reviews yet.
+        </p>
       )}
     </div>
   );

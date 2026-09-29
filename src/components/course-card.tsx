@@ -16,6 +16,8 @@ export type Course = {
   students: StaticImageData[];
   studentCount: string;
   price: number;
+  categories: string[];
+  featured?: boolean;
 };
 
 export function CourseCard({
@@ -60,9 +62,7 @@ export function CourseCard({
       </div>
 
       <div className="mt-5 flex items-start justify-between gap-3">
-        <h3 className="truncate heading-xs text-black">
-          {course.title}
-        </h3>
+        <h3 className="truncate heading-xs text-black">{course.title}</h3>
         <span className="flex shrink-0 items-center gap-1 pt-1 label-l text-black-700">
           {course.rating}{" "}
           <Star

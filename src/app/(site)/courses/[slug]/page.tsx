@@ -60,11 +60,11 @@ export default async function CoursePage({
 
   return (
     <main>
-      <section className="relative bg-blue-800 px-4 pb-16 text-white">
+      <section className="relative bg-blue-800 px-4 pb-16 text-gray-50">
         <GridLines />
         <Navbar />
 
-        <div className="relative mx-auto max-w-300 pt-10">
+        <div className="relative mx-auto max-w-300 pt-16">
           <div className="flex flex-wrap items-start justify-between gap-6">
             <div>
               <h1 className="heading-s sm:heading-m">{course.fullTitle}</h1>
@@ -102,7 +102,7 @@ export default async function CoursePage({
             <ShareButton title={course.fullTitle} />
           </div>
 
-          <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1fr_412px] lg:gap-16">
+          <div className="mt-15 grid items-start gap-10 lg:grid-cols-[1fr_412px] lg:gap-16">
             <div className="relative aspect-3/2 overflow-hidden rounded-3xl bg-gray-100">
               {course.image && (
                 <Image
@@ -229,11 +229,15 @@ function LessonList({ course }: { course: CourseDetail }) {
         {course.previewLessons.map((lesson, i) => (
           <li
             key={lesson.title}
-            className="grid grid-cols-[auto_1fr_auto] gap-3 body-m text-gray-950"
+            className="grid grid-cols-[auto_1fr_auto] gap-3 body-m font-medium text-gray-950"
           >
-            <span>{String(i + 1).padStart(2, "0")}</span>
+            <span className="font-medium">
+              {String(i + 1).padStart(2, "0")}
+            </span>
             <span className="leading-tight">{lesson.title}</span>
-            <span className="text-blue-800">{lesson.minutes} mins</span>
+            <span className="text-blue-800 font-normal">
+              {lesson.minutes} mins
+            </span>
           </li>
         ))}
       </ol>
@@ -305,10 +309,7 @@ function Lessons({ course }: { course: CourseDetail }) {
         {course.modules.map((module) => (
           <li key={module.title} className="flex items-center gap-4">
             <span className="flex size-15 shrink-0 items-center justify-center rounded-2xl bg-lime-400">
-              <Video
-                className="size-7 fill-blue-800 text-blue-800"
-                aria-hidden
-              />
+              <Video className="size-7  text-gray-950" aria-hidden />
             </span>
             <div>
               <h3 className="label-m text-gray-950">{module.title}</h3>

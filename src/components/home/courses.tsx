@@ -1,5 +1,4 @@
-import { CourseCard } from "@/components/course-card";
-import { CategoryFilter } from "@/components/home/category-filter";
+import { CourseBrowser } from "@/components/home/course-browser";
 import { courses } from "@/lib/courses";
 
 export function Courses() {
@@ -20,15 +19,7 @@ export function Courses() {
           </p>
         </div>
 
-        <div className="mt-10.5">
-          <CategoryFilter />
-        </div>
-
-        <div className="mt-19 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {courses.map((course) => (
-            <CourseCard key={course.slug} course={course} />
-          ))}
-        </div>
+        <CourseBrowser courses={courses} />
       </div>
     </section>
   );

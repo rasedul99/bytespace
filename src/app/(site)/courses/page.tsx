@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { ChevronDown, Search, SearchX } from "lucide-react";
+import Link from "next/link";
+import { ChevronDown, Search, SearchX, X } from "lucide-react";
 
 import { CourseCard } from "@/components/course-card";
+import { CategoryLinks } from "@/components/courses/category-links";
 import { CourseToolbar } from "@/components/courses/course-toolbar";
 import { Pagination } from "@/components/courses/pagination";
 import { GridLines } from "@/components/grid-lines";
-import { CategoryFilter } from "@/components/home/category-filter";
 import { Navbar } from "@/components/navbar";
+import { categories, FEATURED, inCategory } from "@/lib/categories";
+import { coursesHref } from "@/lib/course-search";
 import { catalog, COURSES_PER_PAGE, courses } from "@/lib/courses";
 
 export const metadata: Metadata = { title: "Courses · ByteSpace" };
+
+const outlineButton =
+  "flex h-10 items-center rounded-full border border-gray-200 px-4 label-s text-gray-950 transition-colors hover:border-gray-950";
 
 export default async function CoursesPage({
   searchParams,
@@ -18,12 +24,17 @@ export default async function CoursesPage({
 }) {
   const params = await searchParams;
   const query = typeof params.q === "string" ? params.q.trim() : "";
+  const category =
+    typeof params.category === "string" && categories.includes(params.category)
+      ? params.category
+      : FEATURED;
+  const filtered = category !== FEATURED;
 
-  const results = query
-    ? courses.filter((c) =>
-        `${c.title} ${c.creator}`.toLowerCase().includes(query.toLowerCase()),
-      )
-    : catalog;
+  const results = (query ? courses : catalog).filter(
+    (c) =>
+      inCategory(c, category) &&
+      `${c.title} ${c.creator}`.toLowerCase().includes(query.toLowerCase()),
+  );
 
   const totalPages = Math.max(1, Math.ceil(results.length / COURSES_PER_PAGE));
   const requested = Number(params.page) || 1;
@@ -46,17 +57,31 @@ export default async function CoursesPage({
             action="/courses"
             className="mt-8 flex w-full max-w-163 items-center gap-4"
           >
-            <label className="flex h-13 flex-1 items-center gap-2 rounded-full bg-white px-6 text-gray-950">
+            {filtered && (
+              <input type="hidden" name="category" value={category} />
+            )}
+            <div className="flex h-13 flex-1 items-center gap-2 rounded-full bg-white px-6 text-gray-950">
               <Search className="size-5 shrink-0 text-gray-400" aria-hidden />
               <input
+                key={query}
                 name="q"
-                type="search"
+                type="text"
+                enterKeyHint="search"
                 defaultValue={query}
                 placeholder="Search"
                 aria-label="Search courses"
                 className="w-full bg-transparent body-m outline-none placeholder:text-gray-400"
               />
-            </label>
+              {query && (
+                <Link
+                  href={coursesHref({ category })}
+                  aria-label="Clear search"
+                  className="shrink-0 rounded-full p-1 text-gray-400 transition-colors hover:bg-gray-50 hover:text-gray-950"
+                >
+                  <X className="size-4" />
+                </Link>
+              )}
+            </div>
 
             <div className="relative">
               <select
@@ -65,6 +90,7 @@ export default async function CoursesPage({
                 className="h-12 appearance-none rounded-full bg-lime-400 pl-6 pr-11 label-s text-gray-950 outline-none"
               >
                 <option value="courses">Courses</option>
+                <option value="topic">Topics</option>
                 <option value="creators">Creators</option>
               </select>
               <ChevronDown
@@ -80,16 +106,27 @@ export default async function CoursesPage({
         <div className="mx-auto max-w-300">
           <CourseToolbar />
 
-          <CategoryFilter
-            limit={9}
-            showMore={false}
-            className="mt-8 max-w-none justify-start"
-          />
+          <div className="mt-8">
+            <CategoryLinks active={category} query={query} />
+          </div>
 
-          {query && (
-            <p className="mt-10 body-m text-gray-700">
-              {results.length} {results.length === 1 ? "result" : "results"} for{" "}
-              <span className="font-medium text-gray-950">“{query}”</span>
+          {(query || filtered) && (
+            <p className="mt-10 body-m text-gray-700" aria-live="polite">
+              {results.length} {results.length === 1 ? "result" : "results"}
+              {query && (
+                <>
+                  {" "}
+                  for{" "}
+                  <span className="font-medium text-gray-950">“{query}”</span>
+                </>
+              )}
+              {filtered && (
+                <>
+                  {" "}
+                  in{" "}
+                  <span className="font-medium text-gray-950">{category}</span>
+                </>
+              )}
             </p>
           )}
 
@@ -104,13 +141,36 @@ export default async function CoursesPage({
               <SearchX className="size-10 text-gray-400" aria-hidden />
               <p className="mt-4 heading-xs text-gray-950">No courses found</p>
               <p className="mt-2 body-m text-gray-700">
-                Try a different search or browse all courses.
+                Try a different search{filtered && " or another category"}.
               </p>
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
+                {query && (
+                  <Link
+                    href={coursesHref({ category })}
+                    className={outlineButton}
+                  >
+                    Clear search
+                  </Link>
+                )}
+                {filtered && (
+                  <Link
+                    href={coursesHref({ q: query })}
+                    className={outlineButton}
+                  >
+                    Show all categories
+                  </Link>
+                )}
+              </div>
             </div>
           )}
 
           <div className="mt-24">
-            <Pagination page={page} totalPages={totalPages} query={query} />
+            <Pagination
+              page={page}
+              totalPages={totalPages}
+              query={query}
+              category={category}
+            />
           </div>
         </div>
       </section>

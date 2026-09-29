@@ -1,26 +1,23 @@
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+import { coursesHref } from "@/lib/course-search";
 import { cn } from "@/lib/utils";
 
 export function Pagination({
   page,
   totalPages,
   query,
+  category,
 }: {
   page: number;
   totalPages: number;
   query?: string;
+  category?: string;
 }) {
   if (totalPages <= 1) return null;
 
-  const href = (p: number) => {
-    const params = new URLSearchParams();
-    if (query) params.set("q", query);
-    if (p > 1) params.set("page", String(p));
-    const qs = params.toString();
-    return qs ? `/courses?${qs}` : "/courses";
-  };
+  const href = (p: number) => coursesHref({ q: query, category, page: p });
 
   const arrow =
     "flex size-10 items-center justify-center rounded-full border border-gray-200 text-gray-950 transition-colors hover:border-gray-950";
