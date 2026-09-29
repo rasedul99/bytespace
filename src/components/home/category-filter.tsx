@@ -39,7 +39,7 @@ export function CategoryFilter() {
           aria-pressed={active === category}
           onClick={() => setActive(category)}
           className={cn(
-            "h-10.5 rounded-full px-4 text-base text-gray-700 transition-colors",
+            "h-10.5 rounded-full px-4 body-m text-gray-700 transition-colors",
             active === category
               ? "bg-lime-400"
               : "bg-gray-50 hover:bg-gray-100",
@@ -50,7 +50,7 @@ export function CategoryFilter() {
       ))}
       <Link
         href="/courses"
-        className="px-2 text-base font-medium text-blue-800"
+        className="px-2 label-m text-blue-800"
       >
         + More
       </Link>

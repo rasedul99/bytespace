@@ -67,11 +67,11 @@ export function GrowAndCreate() {
         {/* Learners */}
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-semibold leading-tight text-gray-950 sm:text-4xl">
+            <h2 className="heading-s text-gray-950">
               Your Path to Professional
               <br className="hidden sm:block" /> Growth Starts Here!
             </h2>
-            <p className="mt-10 max-w-125 text-lg leading-relaxed text-gray-700">
+            <p className="mt-10 max-w-125 body-l text-gray-700">
               Explore our curated selection of courses tailored to enhance your
               capabilities and accelerate your career journey. Whether you are
               looking to sharpen specific skills, gain industry expertise, or
@@ -82,8 +82,8 @@ export function GrowAndCreate() {
             <dl className="mt-10 flex gap-18">
               {stats.map((stat) => (
                 <div key={stat.label} className="flex flex-col-reverse gap-1">
-                  <dt className="text-lg text-gray-700">{stat.label}</dt>
-                  <dd className="font-heading text-4xl font-medium text-blue-800">
+                  <dt className="body-l text-gray-700">{stat.label}</dt>
+                  <dd className="heading-s text-blue-800">
                     {stat.value}
                   </dd>
                 </div>
@@ -126,9 +126,9 @@ export function GrowAndCreate() {
             className="relative mx-auto aspect-548/561 w-full max-w-137 lg:ml-0"
           >
             <div className="absolute left-6 top-3 z-0 w-58 rounded-2xl bg-blue-800 p-4 text-white shadow-[0_8px_24px_rgb(0_59_226/0.25)]">
-              <p className="text-base font-medium">Total Revenue</p>
-              <p className="text-[10px] text-gray-50">July 1-28</p>
-              <p className="mt-2 font-heading text-2xl font-semibold">
+              <p className="label-m">Total Revenue</p>
+              <p className="body-xs text-gray-50">July 1-28</p>
+              <p className="mt-2 heading-xs">
                 $120.29
               </p>
               <div className="mt-3 h-1.5 rounded-full bg-white">
@@ -137,12 +137,12 @@ export function GrowAndCreate() {
             </div>
 
             <div className="absolute left-6 top-[30%] z-0 w-34 rounded-2xl bg-blue-800 p-4 text-white shadow-[0_8px_24px_rgb(0_59_226/0.25)]">
-              <p className="text-base font-medium">Year to Date</p>
-              <p className="text-[10px] text-gray-50">2023</p>
-              <p className="mt-2 font-heading text-2xl font-semibold">
+              <p className="label-m">Year to Date</p>
+              <p className="body-xs text-gray-50">2023</p>
+              <p className="mt-2 heading-xs">
                 $1,200.38
               </p>
-              <span className="mt-2 inline-block rounded-full bg-lime-400 px-2 py-0.5 text-[10px] font-semibold text-gray-950">
+              <span className="mt-2 inline-block rounded-full bg-lime-400 px-2 py-0.5 label-xs text-gray-950">
                 +12$
               </span>
             </div>
@@ -165,12 +165,12 @@ export function GrowAndCreate() {
           </div>
 
           <div>
-            <h2 className="text-4xl font-semibold leading-tight text-gray-950 sm:text-[44px]">
+            <h2 className="heading-s text-gray-950 sm:heading-m">
               Create &amp; Manage
               <br />
               Courses Easily.
             </h2>
-            <p className="mt-10 max-w-137 text-lg leading-relaxed text-gray-700">
+            <p className="mt-10 max-w-137 body-l text-gray-700">
               <strong className="font-bold text-gray-950">ByteSpace</strong>{" "}
               supports individuals or entities in the creation, publication, and
               administration of educational courses.
@@ -179,7 +179,7 @@ export function GrowAndCreate() {
               {benefits.map((benefit) => (
                 <li
                   key={benefit}
-                  className="flex items-center gap-2.5 text-xl font-medium text-gray-950"
+                  className="flex items-center gap-2.5 label-l text-gray-950"
                 >
                   <CircleCheck
                     className="size-5 fill-blue-800 text-white"

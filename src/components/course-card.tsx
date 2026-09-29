@@ -46,7 +46,7 @@ export function CourseCard({
             aria-hidden
           />
         )}
-        <div className="absolute inset-x-4 bottom-4 flex justify-between gap-2 text-xs text-black-700  font-medium">
+        <div className="absolute inset-x-4 bottom-4 flex justify-between gap-2 label-xs text-black-700">
           <span className="whitespace-nowrap rounded-full px-3 py-1.5 backdrop-blur bg-[#F6F6F699]">
             {course.lessons} Lessons
           </span>
@@ -60,10 +60,10 @@ export function CourseCard({
       </div>
 
       <div className="mt-5 flex items-start justify-between gap-3">
-        <h3 className="truncate text-xl font-semibold text-black">
+        <h3 className="truncate heading-xs text-black">
           {course.title}
         </h3>
-        <span className="flex shrink-0 items-center gap-1 pt-1 text-lg font-medium text-black-700">
+        <span className="flex shrink-0 items-center gap-1 pt-1 label-l text-black-700">
           {course.rating}{" "}
           <Star
             className="size-4 fill-lime-400 text-lime-400"
@@ -71,12 +71,12 @@ export function CourseCard({
           />
         </span>
       </div>
-      <p className="text-xs text-black-700">
+      <p className="body-xs text-black-700">
         by <span className="text-blue-800">{course.creator}</span>
       </p>
 
       <div className="mt-4 flex items-center gap-3">
-        <span className="flex h-8 items-center gap-2 rounded-full bg-gray-50 px-3 text-xs text-gray-700">
+        <span className="flex h-8 items-center gap-2 rounded-full bg-gray-50 px-3 body-xs text-gray-700">
           <ChartNoAxesColumnIncreasing className="size-4" aria-hidden />
           {course.level}
         </span>
@@ -91,7 +91,7 @@ export function CourseCard({
           ))}
           <span
             className={cn(
-              "flex size-8 items-center justify-center rounded-full border-2 border-white bg-lime-400 text-xs font-semibold text-gray-950",
+              "flex size-8 items-center justify-center rounded-full border-2 border-white bg-lime-400 label-xs text-gray-950",
               classes?.countClassName,
             )}
           >
@@ -100,9 +100,9 @@ export function CourseCard({
         </div>
       </div>
 
-      <p className="mt-4 text-xl font-semibold text-blue-800">
+      <p className="mt-4 heading-xs text-blue-800">
         ${course.price}
-        <span className="text-xs font-normal text-black-700">/lifetime</span>
+        <span className="body-xs text-black-700">/lifetime</span>
       </p>
     </Link>
   );

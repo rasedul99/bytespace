@@ -68,10 +68,10 @@ export function Hero() {
       <Navbar />
 
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center px-4 pt-16 text-center sm:px-6 sm:pt-20">
-        <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight sm:text-7xl sm:leading-[1.15]">
+        <h1 className="max-w-4xl heading-s sm:heading-l">
           Get Access to Hundreds Courses Available
         </h1>
-        <p className="mt-5  text-sm text-gray-100 sm:text-lg">
+        <p className="mt-5 body-s text-gray-100 sm:body-l">
           Unlock your creativity, gain valuable knowledge, and grow your
           business with our wide range of courses.
         </p>
@@ -86,12 +86,12 @@ export function Hero() {
               name="q"
               type="search"
               placeholder="Course, topic, creator"
-              className="w-full bg-transparent text-lg outline-none placeholder:text-gray-400"
+              className="w-full bg-transparent body-l outline-none placeholder:text-gray-400"
             />
           </label>
           <button
             type="submit"
-            className="h-12 rounded-full bg-lime-400 px-6 text-sm font-medium text-gray-950 transition hover:brightness-95"
+            className="h-12 rounded-full bg-lime-400 px-6 label-s text-gray-950 transition hover:brightness-95"
           >
             Search
           </button>
@@ -116,8 +116,8 @@ export function Hero() {
         />
 
         <div className="absolute left-[22.5%] top-[25.4%] hidden rounded-2xl bg-white p-4 text-left shadow-[0_8px_24px_rgb(0_0_0/0.08)] md:block">
-          <p className="text-base text-gray-950">UI/UX Design</p>
-          <p className="mt-0.5 text-xs text-gray-400">
+          <p className="label-m text-gray-950">UI/UX Design</p>
+          <p className="mt-0.5 body-xs text-gray-400">
             200 Courses &nbsp;•&nbsp; 1000+ Students
           </p>
         </div>

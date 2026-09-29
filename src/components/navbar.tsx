@@ -14,7 +14,7 @@ export function Navbar() {
     <header className="relative z-20 mx-auto flex h-20 max-w-300 items-center justify-between px-4 sm:px-0">
       <Logo />
 
-      <nav className="hidden items-center gap-8 text-sm text-white/80 md:flex">
+      <nav className="hidden items-center gap-8 body-s text-white/80 md:flex">
         {links.map((link, i) => (
           <Link
             key={link.href}
@@ -30,7 +30,7 @@ export function Navbar() {
         ))}
       </nav>
 
-      <div className="flex items-center gap-6 text-sm text-white/80">
+      <div className="flex items-center gap-6 body-s text-white/80">
         <Link
           href="/sign-in"
           className="hidden transition-colors hover:text-white sm:block"

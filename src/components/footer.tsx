@@ -39,7 +39,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
             <Logo variant="dark" />
-            <p className="mt-4 text-sm text-gray-950">
+            <p className="mt-4 body-s text-gray-950">
               Stay Up to date with our latest features and releases by joining
               our newsletter.
             </p>
@@ -51,16 +51,16 @@ export function Footer() {
                 required
                 placeholder="Enter your email"
                 aria-label="Email address"
-                className="h-13 min-w-0 flex-1 rounded-full border border-gray-200 px-6 text-base text-gray-950 outline-none placeholder:text-gray-950 focus:border-lime-400"
+                className="h-13 min-w-0 flex-1 rounded-full border border-gray-200 px-6 body-m text-gray-950 outline-none placeholder:text-gray-950 focus:border-lime-400"
               />
               <button
                 type="submit"
-                className="h-12 rounded-full bg-lime-400 px-7 text-sm font-medium text-gray-950 transition hover:brightness-95"
+                className="h-12 rounded-full bg-lime-400 px-7 label-s text-gray-950 transition hover:brightness-95"
               >
                 Subscribe
               </button>
             </form>
-            <p className="mt-6 max-w-100 text-xs leading-relaxed text-gray-950">
+            <p className="mt-6 max-w-100 body-xs text-gray-950">
               By subscribing, you agree to our{" "}
               <Link
                 href="/privacy"
@@ -82,7 +82,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-950 transition-colors hover:text-blue-800"
+                      className="body-s text-gray-950 transition-colors hover:text-blue-800"
                     >
                       {link.label}
                     </Link>
@@ -93,14 +93,14 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-35.5 flex flex-col-reverse gap-4 border-t border-gray-200 pt-5.5 text-xs text-gray-950 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-35.5 flex flex-col-reverse gap-4 border-t border-gray-200 pt-5.5 body-xs text-gray-950 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} ByteSpace. All rights reserved.</p>
           <ul className="flex gap-6">
             {legalLinks.map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className="text-xs transition-colors hover:text-blue-800"
+                  className="transition-colors hover:text-blue-800"
                 >
                   {link.label}
                 </Link>

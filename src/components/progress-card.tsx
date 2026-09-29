@@ -14,8 +14,8 @@ export function ProgressCard({
         className,
       )}
     >
-      <p className="text-sm font-medium text-gray-950">Learning Progress</p>
-      <p className="mt-3 font-heading text-5xl font-semibold text-gray-950">
+      <p className="label-s text-gray-950">Learning Progress</p>
+      <p className="mt-3 heading-m text-gray-950">
         {value}%
       </p>
       <div className="mt-3 h-2 rounded-full bg-gray-100">

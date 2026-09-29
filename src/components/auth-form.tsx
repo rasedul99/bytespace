@@ -29,8 +29,8 @@ export function AuthForm({
 }) {
   return (
     <div className="flex flex-col rounded-3xl bg-white p-8 sm:p-16 lg:mt-20 lg:min-h-198">
-      <p className="text-lg text-blue-800">{eyebrow}</p>
-      <h1 className="mt-2 text-4xl font-semibold leading-tight text-gray-950 sm:text-[44px]">
+      <p className="body-l text-blue-800">{eyebrow}</p>
+      <h1 className="mt-2 heading-s text-gray-950 sm:heading-m">
         {title}
       </h1>
 
@@ -41,7 +41,7 @@ export function AuthForm({
         <div className="space-y-6">
           {fields.map((field) => (
             <label key={field.name} className="block">
-              <span className="text-sm font-medium text-gray-950">
+              <span className="label-s text-gray-950">
                 {field.label}
               </span>
               <input
@@ -50,14 +50,14 @@ export function AuthForm({
                 placeholder={field.placeholder}
                 autoComplete={field.autoComplete}
                 required
-                className="mt-2 h-13 w-full rounded-xl border border-gray-100 px-5 text-[15px] text-gray-950 outline-none transition-colors placeholder:text-gray-400 focus:border-blue-800"
+                className="mt-2 h-13 w-full rounded-xl border border-gray-100 px-5 body-m text-gray-950 outline-none transition-colors placeholder:text-gray-400 focus:border-blue-800"
               />
             </label>
           ))}
         </div>
         <button
           type="submit"
-          className="mt-8 h-11 self-end rounded-full bg-lime-400 px-6 text-[17px] font-medium text-gray-950 transition hover:brightness-95"
+          className="mt-8 h-11 self-end rounded-full bg-lime-400 px-6 label-l text-gray-950 transition hover:brightness-95"
         >
           {submitLabel}
         </button>
@@ -65,7 +65,7 @@ export function AuthForm({
 
       {children}
 
-      <p className="mt-16 pt-8 text-center text-base text-gray-700 lg:mt-auto">
+      <p className="mt-16 pt-8 text-center body-m text-gray-700 lg:mt-auto">
         {footer.text}{" "}
         <Link href={footer.href} className="text-blue-800 hover:underline">
           {footer.linkLabel}

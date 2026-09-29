@@ -73,11 +73,11 @@ export function CreatorCta() {
       </div>
 
       <div className="relative mx-auto max-w-240 text-center">
-        <h2 className="text-3xl font-semibold leading-tight sm:text-[44px] text-gray-50">
+        <h2 className="heading-s text-gray-50 sm:heading-m">
           Unlock Your Potential as a
           <br className="hidden sm:block" /> Creator with ByteSpace
         </h2>
-        <p className="mx-auto mt-10 max-w-210 text-lg leading-relaxed text-gray-50">
+        <p className="mx-auto mt-10 max-w-210 body-l text-gray-50">
           Experience the collaboration of numerous creators and an expanding
           selection of courses. Register now and become a part of a community
           comprising over 10,000 local and international creators. Utilize our
@@ -86,7 +86,7 @@ export function CreatorCta() {
         </p>
         <Link
           href="/join"
-          className="mt-10 inline-flex h-11 items-center rounded-full bg-lime-400 px-6 text-sm font-medium text-gray-950 transition hover:brightness-95"
+          className="mt-10 inline-flex h-11 items-center rounded-full bg-lime-400 px-6 label-s text-gray-950 transition hover:brightness-95"
         >
           Join as Creator
         </Link>

@@ -19,8 +19,8 @@ export function AuthIntro() {
 
   return (
     <>
-      <p className="mt-12 font-heading text-xl font-semibold">{title}</p>
-      <p className="mt-4 max-w-118 text-lg leading-relaxed text-gray-50">
+      <p className="mt-12 heading-xs">{title}</p>
+      <p className="mt-4 max-w-118 body-l text-gray-50">
         {body}
       </p>
     </>

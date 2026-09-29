@@ -9,7 +9,7 @@ const providers = [
 export function SocialSignIn() {
   return (
     <div className="mt-20">
-      <div className="flex items-center gap-3 text-[15px] text-gray-400">
+      <div className="flex items-center gap-3 body-m text-gray-400">
         <span className="h-px flex-1 bg-gray-400/50" />
         or
         <span className="h-px flex-1 bg-gray-400/50" />

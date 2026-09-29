@@ -33,10 +33,10 @@ export function HappyStudentsCard({
         className,
       )}
     >
-      <p className="text-base font-medium text-gray-950">Happy Students</p>
+      <p className="label-m text-gray-950">Happy Students</p>
       <p
         className={cn(
-          "flex items-center gap-1 text-xs",
+          "flex items-center gap-1 body-xs",
           lime ? "text-gray-950/60" : "text-gray-400",
         )}
       >
@@ -61,7 +61,7 @@ export function HappyStudentsCard({
         ))}
         <span
           className={cn(
-            "flex size-10 items-center justify-center rounded-full border-2 text-xs font-bold",
+            "flex size-10 items-center justify-center rounded-full border-2 label-xs",
             lime
               ? "border-lime-400 bg-gray-950 text-white"
               : "border-white bg-lime-400 text-gray-950",

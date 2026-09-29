@@ -70,11 +70,11 @@ export function Testimonials() {
 
       <div className="relative mx-auto max-w-300">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-end">
-          <h2 className="text-3xl font-semibold leading-tight text-gray-950 sm:text-[44px]">
+          <h2 className="heading-s text-gray-950 sm:heading-m">
             Discover What Our
             <br className="hidden sm:block" /> Community Is Saying
           </h2>
-          <p className="text-lg text-black-700 leading-[1.6]">
+          <p className="body-l text-black-700">
             At ByteSpace, our vibrant community of learners and creators is at
             the heart of what we do. Hear directly from those who have
             experienced the transformative journey of learning and creating on
@@ -93,17 +93,17 @@ export function Testimonials() {
                   className="size-20 rounded-full object-cover"
                 />
               ) : (
-                <span className="flex size-20 items-center justify-center rounded-full bg-gray-100 font-heading text-xl font-semibold text-gray-400">
+                <span className="flex size-20 items-center justify-center rounded-full bg-gray-100 heading-xs text-gray-400">
                   {t.name[0]}
                 </span>
               )}
               <figcaption className="mt-6">
-                <p className="font-heading text-xl font-semibold text-gray-950">
+                <p className="heading-xs text-gray-950">
                   {t.name}
                 </p>
-                <p className="text-xl text-blue-800">{t.role}</p>
+                <p className="body-l text-blue-800">{t.role}</p>
               </figcaption>
-              <blockquote className="mt-6 text-lg leading-8 text-neutral-600">
+              <blockquote className="mt-6 body-l text-neutral-600">
                 &quot;{t.quote}&quot;
               </blockquote>
             </figure>

@@ -22,10 +22,10 @@ export function LearningPaths() {
     <section className="bg-white px-4 py-24">
       <div className="mx-auto max-w-300">
         <div className="text-center">
-          <h2 className="text-4xl font-semibold leading-tight text-[#040819] sm:text-[44px]">
+          <h2 className="heading-s text-[#040819] sm:heading-m">
             Explore Diverse Learning Paths at Bytespace
           </h2>
-          <p className="mx-auto mt-4 max-w-230 text-lg text-gray-400">
+          <p className="mx-auto mt-4 max-w-230 body-l text-gray-400">
             At Bytespace, we believe in empowering individuals through
             knowledge. Our diverse range of courses spans various fields,
             ensuring there&apos;s something for everyone. Unleash your potential
@@ -43,7 +43,7 @@ export function LearningPaths() {
                 <span className="flex size-15 items-center justify-center rounded-full bg-lime-400 text-gray-950">
                   <Icon className="size-9" strokeWidth={1.5} aria-hidden />
                 </span>
-                <span className="text-xl font-medium text-gray-950">
+                <span className="label-l text-gray-950">
                   {label}
                 </span>
               </Link>
