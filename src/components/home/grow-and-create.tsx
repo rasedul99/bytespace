@@ -93,7 +93,7 @@ export function GrowAndCreate() {
 
           <div
             inert
-            className="relative mx-auto aspect-577/537 w-full max-w-xl lg:mr-0"
+            className="relative mx-auto aspect-577/537 w-144.25 [zoom:0.5] min-[360px]:[zoom:0.56] min-[390px]:[zoom:0.6] min-[430px]:[zoom:0.68] sm:[zoom:1] sm:w-full sm:max-w-xl lg:mr-0"
           >
             <div className="pointer-events-none absolute top-[-2%] left-0 w-[63%]">
               <CourseCard course={courses[0]} />
@@ -123,7 +123,7 @@ export function GrowAndCreate() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div
             aria-hidden
-            className="relative mx-auto aspect-548/561 w-full max-w-137 lg:ml-0"
+            className="relative mx-auto aspect-548/561 w-137 [zoom:0.5] min-[360px]:[zoom:0.56] min-[390px]:[zoom:0.6] min-[430px]:[zoom:0.68] sm:[zoom:1] sm:w-full sm:max-w-137 lg:ml-0"
           >
             <div className="absolute left-6 top-3 z-0 w-58 rounded-2xl bg-blue-800 p-4 text-white shadow-[0_8px_24px_rgb(0_59_226/0.25)]">
               <p className="label-m">Total Revenue</p>

@@ -23,7 +23,7 @@ export function CategoryLinks({
   return (
     <nav
       aria-label="Categories"
-      className="flex flex-wrap items-center gap-x-4 gap-y-5"
+      className="flex flex-wrap items-center gap-x-4 gap-y-5 max-sm:-mx-4 max-sm:flex-nowrap max-sm:justify-start max-sm:overflow-x-auto max-sm:px-4 max-sm:pb-1 [scrollbar-width:none]"
     >
       {shown.map((category) => (
         <Link

@@ -16,14 +16,14 @@ const brands = [
 
 export function Brands() {
   return (
-    <section className="bg-gray-50 py-20">
-      <ul className="mx-auto flex max-w-300 flex-wrap items-center justify-center gap-x-18 px-4">
+    <section className="bg-gray-50 py-12 sm:py-20">
+      <ul className="mx-auto flex max-w-300 flex-wrap items-center justify-center gap-x-8 gap-y-6 px-4 sm:gap-x-18">
         {brands.map(({ name, logo }, i) => (
           <li key={i}>
             <Image
               src={logo}
               alt={name}
-              className="h-10 w-auto max-w-41.75 object-contain"
+              className="h-8 w-auto max-w-41.75 object-contain sm:h-10"
             />
           </li>
         ))}

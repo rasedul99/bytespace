@@ -35,7 +35,7 @@ export function CategoryFilter({
   return (
     <div
       className={cn(
-        "mx-auto flex max-w-275 flex-wrap items-center justify-center gap-x-4 gap-y-5",
+        "mx-auto flex max-w-275 flex-wrap items-center justify-center gap-x-4 gap-y-5 max-sm:-mx-4 max-sm:flex-nowrap max-sm:justify-start max-sm:overflow-x-auto max-sm:px-4 max-sm:pb-1 [scrollbar-width:none]",
         className,
       )}
     >
@@ -51,7 +51,7 @@ export function CategoryFilter({
         </button>
       ))}
       {showMore && (
-        <Link href="/courses" className="px-2 label-m text-blue-800">
+        <Link href="/courses" className="shrink-0 whitespace-nowrap px-2 label-m text-blue-800">
           + More
         </Link>
       )}

@@ -31,7 +31,7 @@ export function CourseCard({
   return (
     <Link
       href={`/courses/${course.slug}`}
-      className="group block rounded-3xl border border-gray-200 bg-white p-4 transition-shadow hover:shadow-[0_8px_24px_rgb(0_0_0/0.06)]"
+      className="group block min-w-0 rounded-3xl border border-gray-200 bg-white p-4 transition-shadow hover:shadow-[0_8px_24px_rgb(0_0_0/0.06)]"
     >
       <div className="relative h-50 overflow-hidden rounded-2xl bg-gray-100">
         {course.image ? (
@@ -48,21 +48,21 @@ export function CourseCard({
             aria-hidden
           />
         )}
-        <div className="absolute inset-x-4 bottom-4 flex justify-between gap-2 label-xs text-black-700">
-          <span className="whitespace-nowrap rounded-full px-3 py-1.5 backdrop-blur bg-[#F6F6F699]">
+        <div className="absolute inset-x-3 bottom-3 flex flex-wrap justify-between gap-1.5 label-xs text-black-700 sm:inset-x-4 sm:bottom-4 sm:gap-2">
+          <span className="whitespace-nowrap rounded-full px-2.5 py-1.5 sm:px-3 backdrop-blur bg-[#F6F6F699]">
             {course.lessons} Lessons
           </span>
-          <span className="whitespace-nowrap rounded-full px-3 py-1.5 backdrop-blur bg-[#F6F6F699]">
+          <span className="whitespace-nowrap rounded-full px-2.5 py-1.5 sm:px-3 backdrop-blur bg-[#F6F6F699]">
             {course.duration}
           </span>
-          <span className="whitespace-nowrap rounded-full px-3 py-1.5 backdrop-blur bg-[#F6F6F699]">
+          <span className="whitespace-nowrap rounded-full px-2.5 py-1.5 sm:px-3 backdrop-blur bg-[#F6F6F699]">
             {course.comments} Comments
           </span>
         </div>
       </div>
 
       <div className="mt-5 flex items-start justify-between gap-3">
-        <h3 className="truncate heading-xs text-black">{course.title}</h3>
+        <h3 className="min-w-0 truncate heading-xs text-black">{course.title}</h3>
         <span className="flex shrink-0 items-center gap-1 pt-1 label-l text-black-700">
           {course.rating}{" "}
           <Star

@@ -36,7 +36,7 @@ export function Footer() {
   return (
     <footer className="bg-white px-4 py-18">
       <div className="mx-auto max-w-300">
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div>
             <Logo variant="dark" />
             <p className="mt-4 body-s text-gray-950">
@@ -95,7 +95,7 @@ export function Footer() {
 
         <div className="mt-35.5 flex flex-col-reverse gap-4 border-t border-gray-200 pt-5.5 body-xs text-gray-950 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} ByteSpace. All rights reserved.</p>
-          <ul className="flex gap-6">
+          <ul className="flex flex-wrap gap-x-6 gap-y-2">
             {legalLinks.map((link) => (
               <li key={link.label}>
                 <Link
