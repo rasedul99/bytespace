@@ -38,32 +38,35 @@ const testimonials: Testimonial[] = [
 export function Testimonials() {
   return (
     <section className="relative overflow-hidden bg-[#fafafa] px-4 py-16 lg:py-18">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-0 top-full size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, rgba(0, 59, 226, 0.24) 0%, rgba(0, 59, 226, 0.06) 53%, rgba(0, 59, 226, 0.01) 75%, rgba(0, 59, 226, 0.00) 100%)",
-        }}
-      />
+      {/* glows stay inside a centred 1440px frame on wide screens / zoomed out */}
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 w-full max-w-360 -translate-x-1/2">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-0 top-full size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(0, 59, 226, 0.24) 0%, rgba(0, 59, 226, 0.06) 53%, rgba(0, 59, 226, 0.01) 75%, rgba(0, 59, 226, 0.00) 100%)",
+          }}
+        />
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-[50%] top-[15%] size-168 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.60) 0%, rgba(203, 252, 1, 0.14) 53%, rgba(203, 252, 1, 0.04) 75%, rgba(203, 252, 1, 0.00) 100%)",
-        }}
-      />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-[50%] top-[15%] size-168 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.60) 0%, rgba(203, 252, 1, 0.14) 53%, rgba(203, 252, 1, 0.04) 75%, rgba(203, 252, 1, 0.00) 100%)",
+          }}
+        />
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-full top-[40%] size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.40) 0%, rgba(203, 252, 1, 0.09) 53%, rgba(203, 252, 1, 0.02) 75%, rgba(203, 252, 1, 0.00) 100%)",
-        }}
-      />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-full top-[40%] size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.40) 0%, rgba(203, 252, 1, 0.09) 53%, rgba(203, 252, 1, 0.02) 75%, rgba(203, 252, 1, 0.00) 100%)",
+          }}
+        />
+      </div>
 
       <div className="relative mx-auto max-w-300">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-end">

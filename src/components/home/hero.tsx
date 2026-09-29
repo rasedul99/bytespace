@@ -16,10 +16,11 @@ const art = {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-blue-800 text-white h-dvh">
+    <section className="relative overflow-hidden bg-blue-800 text-white">
       <GridLines />
 
-      {/* 3D shapes from the design, behind the content; hidden below lg */}
+      {/* 3D shapes from the design, behind the content; hidden below lg. */}
+      {/* Shapes cut off by the edge stay pinned to the screen edges... */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 hidden lg:block"
@@ -32,6 +33,16 @@ export function Hero() {
           height={387}
           className="absolute -left-25 top-[23%] w-100"
         />
+        {/* lime cylinder against the right edge */}
+        <Image src={cylinderLime} alt="" className="absolute right-0 top-[25%] w-44" />
+      </div>
+
+      {/* ...the rest stay inside the 1440px design frame, near the content,
+          so they don't drift apart on very wide screens (or when zoomed out). */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-full max-w-360 -translate-x-1/2 lg:block"
+      >
         {/* white squiggle — same spring, turned white */}
         <Image
           src="/images/hero/spring-lime.webp"
@@ -42,8 +53,6 @@ export function Hero() {
         />
         {/* white ring, bottom-left */}
         <Image src={ringWhite} alt="" className="absolute left-14 top-[71%] w-55" />
-        {/* lime cylinder against the right edge */}
-        <Image src={cylinderLime} alt="" className="absolute right-0 top-[25%] w-44" />
         {/* white cone, right */}
         <Image src={coneWhite} alt="" className="absolute left-[78%] top-[48%] w-32" />
         {/* white squiggle, bottom-right */}

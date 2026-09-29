@@ -23,42 +23,45 @@ const benefits = [
 export function GrowAndCreate() {
   return (
     <section className="relative overflow-hidden bg-[#f5f6fb] px-4 py-24 lg:py-28">
-      {/* Figma glows — positions from the 1440×1460 frame, as % of the section */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-[35%] top-[7%] size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.40) 0%, rgba(203, 252, 1, 0.09) 53%, rgba(203, 252, 1, 0.02) 75%, rgba(203, 252, 1, 0.00) 100%)",
-        }}
-      />
+      {/* Figma glows — positions from the 1440×1460 frame. Kept inside a centred
+          1440px frame so they stay near the content on wide screens / zoomed out. */}
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 w-full max-w-360 -translate-x-1/2">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-[35%] top-[7%] size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.40) 0%, rgba(203, 252, 1, 0.09) 53%, rgba(203, 252, 1, 0.02) 75%, rgba(203, 252, 1, 0.00) 100%)",
+          }}
+        />
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-[96%] top-[7.6%] size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, rgba(0, 59, 226, 0.08) 0%, rgba(0, 59, 226, 0.02) 53%, rgba(0, 59, 226, 0.00) 75%, rgba(0, 59, 226, 0.00) 100%)",
-        }}
-      />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-[96%] top-[7.6%] size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(0, 59, 226, 0.08) 0%, rgba(0, 59, 226, 0.02) 53%, rgba(0, 59, 226, 0.00) 75%, rgba(0, 59, 226, 0.00) 100%)",
+          }}
+        />
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-[4%] top-[88%] size-168 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.60) 0%, rgba(203, 252, 1, 0.14) 53%, rgba(203, 252, 1, 0.04) 75%, rgba(203, 252, 1, 0.00) 100%)",
-        }}
-      />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-[4%] top-[88%] size-168 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.60) 0%, rgba(203, 252, 1, 0.14) 53%, rgba(203, 252, 1, 0.04) 75%, rgba(203, 252, 1, 0.00) 100%)",
+          }}
+        />
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-[90%] top-[93%] size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, rgba(0, 59, 226, 0.24) 0%, rgba(0, 59, 226, 0.06) 53%, rgba(0, 59, 226, 0.01) 75%, rgba(0, 59, 226, 0.00) 100%)",
-        }}
-      />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-[90%] top-[93%] size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(0, 59, 226, 0.24) 0%, rgba(0, 59, 226, 0.06) 53%, rgba(0, 59, 226, 0.01) 75%, rgba(0, 59, 226, 0.00) 100%)",
+          }}
+        />
+      </div>
 
       <div className="relative mx-auto max-w-300 space-y-20 lg:space-y-20">
         {/* Learners */}

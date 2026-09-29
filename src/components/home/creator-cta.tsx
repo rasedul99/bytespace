@@ -12,6 +12,7 @@ export function CreatorCta() {
     <section className="relative overflow-hidden bg-blue-800 px-4 py-24 text-white">
       <GridLines />
 
+      {/* Shapes cut off by the edge stay pinned to the screen edges... */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 hidden md:block"
@@ -25,6 +26,24 @@ export function CreatorCta() {
         />
 
         <Image
+          src={coneWhite}
+          alt=""
+          className="absolute left-0 top-[49%] w-29"
+        />
+
+        <Image
+          src={cylinderWhite}
+          alt=""
+          className="absolute right-0 top-10 w-40"
+        />
+      </div>
+
+      {/* ...the rest stay inside the 1440px design frame, near the content */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-full max-w-360 -translate-x-1/2 md:block"
+      >
+        <Image
           src="/images/hero/spring-lime.webp"
           alt=""
           width={387}
@@ -33,21 +52,9 @@ export function CreatorCta() {
         />
 
         <Image
-          src={coneWhite}
-          alt=""
-          className="absolute left-0 top-[49%] w-29"
-        />
-
-        <Image
           src={ringLime}
           alt=""
           className="absolute left-16 top-[81%] w-55"
-        />
-
-        <Image
-          src={cylinderWhite}
-          alt=""
-          className="absolute right-0 top-10 w-40"
         />
 
         <Image
