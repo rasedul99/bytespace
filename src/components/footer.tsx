@@ -34,7 +34,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-white px-4 pt-20 pb-12">
+    <footer className="bg-white px-4 py-18">
       <div className="mx-auto max-w-300">
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
@@ -44,14 +44,14 @@ export function Footer() {
               our newsletter.
             </p>
 
-            <form className="mt-8 flex max-w-125 items-center gap-3">
+            <form className="mt-12 flex max-w-125 items-center gap-3">
               <input
                 name="email"
                 type="email"
                 required
                 placeholder="Enter your email"
                 aria-label="Email address"
-                className="h-12.5 min-w-0 flex-1 rounded-full border border-gray-100 px-6 text-sm text-gray-950 outline-none placeholder:text-gray-950 focus:border-blue-800"
+                className="h-13 min-w-0 flex-1 rounded-full border border-gray-200 px-6 text-base text-gray-950 outline-none placeholder:text-gray-950 focus:border-lime-400"
               />
               <button
                 type="submit"
@@ -93,14 +93,14 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-20 flex flex-col-reverse gap-4 border-t border-gray-100 pt-8 text-xs text-gray-950 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-35.5 flex flex-col-reverse gap-4 border-t border-gray-200 pt-5.5 text-xs text-gray-950 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} ByteSpace. All rights reserved.</p>
           <ul className="flex gap-6">
             {legalLinks.map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className="transition-colors hover:text-blue-800"
+                  className="text-xs transition-colors hover:text-blue-800"
                 >
                   {link.label}
                 </Link>

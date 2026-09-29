@@ -7,7 +7,14 @@ import avatarTwo from "../../public/images/avatars/two.png";
 import avatarThree from "../../public/images/avatars/three.png";
 import avatarFour from "../../public/images/avatars/four.png";
 
-const avatars = [avatarOne, avatarTwo, avatarThree, avatarFour, avatarOne, avatarTwo];
+const avatars = [
+  avatarOne,
+  avatarTwo,
+  avatarThree,
+  avatarFour,
+  avatarOne,
+  avatarTwo,
+];
 
 export function HappyStudentsCard({
   tone = "white",
@@ -27,18 +34,37 @@ export function HappyStudentsCard({
       )}
     >
       <p className="text-base font-medium text-gray-950">Happy Students</p>
-      <p className={cn("flex items-center gap-1 text-xs", lime ? "text-gray-950/60" : "text-gray-400")}>
+      <p
+        className={cn(
+          "flex items-center gap-1 text-xs",
+          lime ? "text-gray-950/60" : "text-gray-400",
+        )}
+      >
         <span className="font-semibold text-gray-950">4.5 </span> (240){" "}
-        <Star className={cn("size-4", lime ? "fill-blue-800 text-blue-800" : "fill-lime-400 text-lime-400")} />
+        <Star
+          className={cn(
+            "size-4",
+            lime
+              ? "fill-blue-800 text-blue-800"
+              : "fill-lime-400 text-lime-400",
+          )}
+        />
       </p>
       <div className="mt-2 flex -space-x-3">
         {avatars.map((avatar, i) => (
-          <Image key={i} src={avatar} alt="" className="size-10.75 rounded-full" />
+          <Image
+            key={i}
+            src={avatar}
+            alt=""
+            className="size-10.75 rounded-full"
+          />
         ))}
         <span
           className={cn(
-            "flex size-10.75 items-center justify-center rounded-full border-2 text-xs font-bold",
-            lime ? "border-lime-400 bg-gray-950 text-white" : "border-white bg-lime-400 text-gray-950",
+            "flex size-10 items-center justify-center rounded-full border-2 text-xs font-bold",
+            lime
+              ? "border-lime-400 bg-gray-950 text-white"
+              : "border-white bg-lime-400 text-gray-950",
           )}
         >
           2K+
