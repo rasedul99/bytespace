@@ -6,7 +6,6 @@ import { HappyStudentsCard } from "@/components/happy-students-card";
 import { ProgressCard } from "@/components/progress-card";
 import { courses } from "@/lib/courses";
 import creator from "../../../public/images/creator/creator.webp";
-import background from "../../../public/images/growandcreate/grow-and-create-bg.webp";
 
 const stats = [
   { value: "12K", label: "Students" },
@@ -24,20 +23,41 @@ const benefits = [
 export function GrowAndCreate() {
   return (
     <section className="relative overflow-hidden bg-[#f5f6fb] px-4 py-24 lg:py-28">
-      <Image
-        src={background}
-        alt=""
-        fill
-        sizes="100vw"
-        className="pointer-events-none object-cover"
+      {/* Figma glows — positions from the 1440×1460 frame, as % of the section */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-[35%] top-[7%] size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
+        style={{
+          background:
+            "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.40) 0%, rgba(203, 252, 1, 0.09) 53%, rgba(203, 252, 1, 0.02) 75%, rgba(203, 252, 1, 0.00) 100%)",
+        }}
       />
 
-      <Image
-        src="/images/growandcreate/lime-glow.svg"
-        alt=""
-        width={425}
-        height={554}
-        className="pointer-events-none absolute bottom-0 left-0"
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-[96%] top-[7.6%] size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
+        style={{
+          background:
+            "radial-gradient(50% 50% at 50% 50%, rgba(0, 59, 226, 0.08) 0%, rgba(0, 59, 226, 0.02) 53%, rgba(0, 59, 226, 0.00) 75%, rgba(0, 59, 226, 0.00) 100%)",
+        }}
+      />
+
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-[4%] top-[88%] size-168 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
+        style={{
+          background:
+            "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.60) 0%, rgba(203, 252, 1, 0.14) 53%, rgba(203, 252, 1, 0.04) 75%, rgba(203, 252, 1, 0.00) 100%)",
+        }}
+      />
+
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-[90%] top-[93%] size-284.25 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[20px]"
+        style={{
+          background:
+            "radial-gradient(50% 50% at 50% 50%, rgba(0, 59, 226, 0.24) 0%, rgba(0, 59, 226, 0.06) 53%, rgba(0, 59, 226, 0.01) 75%, rgba(0, 59, 226, 0.00) 100%)",
+        }}
       />
 
       <div className="relative mx-auto max-w-300 space-y-20 lg:space-y-20">
@@ -87,7 +107,7 @@ export function GrowAndCreate() {
               alt=""
               width={387}
               height={387}
-              className="absolute left-[70%] top-[4%] w-[50%] -rotate-20"
+              className="absolute left-[70%] -top-2 w-[50%] rotate-140 z-50"
             />
             <ProgressCard
               value={55}
@@ -135,7 +155,7 @@ export function GrowAndCreate() {
               alt=""
               width={387}
               height={387}
-              className="absolute left-[55%] top-[12%] z-20 w-[38%] -rotate-30"
+              className="absolute left-[55%] top-[12%] z-20 w-[38%]"
             />
 
             <HappyStudentsCard className="absolute left-[52%] top-[66%] z-30" />
