@@ -12,7 +12,6 @@ import fromIdeaToStartupSuccess from "../../public/images/courses/from-idea-to-s
 
 const students = [avatarOne, avatarTwo, avatarThree, avatarFour];
 
-// Sample data from the design — replace with real courses.
 export const courses: Course[] = [
   {
     slug: "learn-figma-from-basic",
@@ -99,3 +98,10 @@ export const courses: Course[] = [
     price: 25,
   },
 ];
+
+export const COURSES_PER_PAGE = 18;
+
+export const catalog: Course[] = Array.from(
+  { length: COURSES_PER_PAGE * 5 },
+  (_, i) => courses[i % courses.length],
+);

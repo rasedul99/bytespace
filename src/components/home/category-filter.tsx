@@ -26,13 +26,28 @@ const categories = [
   "Cooking",
 ];
 
-// Only highlights the chosen chip for now — filtering needs real course data.
-export function CategoryFilter() {
-  const [active, setActive] = useState(categories[0]);
+export function CategoryFilter({
+  limit,
+  showMore = true,
+  className,
+}: {
+  limit?: number;
+  showMore?: boolean;
+  className?: string;
+}) {
+  const shown = limit
+    ? [...categories.slice(0, limit - 1), categories[categories.length - 1]]
+    : categories;
+  const [active, setActive] = useState(shown[0]);
 
   return (
-    <div className="mx-auto flex max-w-275 flex-wrap items-center justify-center gap-x-4 gap-y-5">
-      {categories.map((category) => (
+    <div
+      className={cn(
+        "mx-auto flex max-w-275 flex-wrap items-center justify-center gap-x-4 gap-y-5",
+        className,
+      )}
+    >
+      {shown.map((category) => (
         <button
           key={category}
           type="button"
@@ -48,12 +63,11 @@ export function CategoryFilter() {
           {category}
         </button>
       ))}
-      <Link
-        href="/courses"
-        className="px-2 label-m text-blue-800"
-      >
-        + More
-      </Link>
+      {showMore && (
+        <Link href="/courses" className="px-2 label-m text-blue-800">
+          + More
+        </Link>
+      )}
     </div>
   );
 }
